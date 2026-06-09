@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Prepared Life Store — Family Engagement Tools for Senior Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sage:#4a5e4a;
+  --sage-dark:#2e3d2e;
+  --sage-mid:#6b7f6b;
+  --sage-light:#c8d8c4;
+  --sage-pale:#f0f5ef;
+  --terra:#b8613a;
+  --terra-light:#f5e8e2;
+  --gold:#c4913a;
+  --gold-light:#fdf3e3;
+  --cream:#f7f4ef;
+  --ink:#1a1a18;
+  --ink-mid:#4a4a44;
+  --ink-light:#8a8a82;
+  --border:#ddd8d0;
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--sage-dark);padding:10px 40px;display:flex;justify-content:space-between;align-items:center}
+.topbar-logo{font-family:'Lora',serif;font-size:15px;color:#fff;font-weight:600;letter-spacing:0.3px}
+.topbar-logo span{font-style:italic;font-weight:400;color:var(--sage-light)}
+.topbar-cta{font-size:12px;color:var(--sage-light);text-decoration:none;letter-spacing:0.5px}
+.topbar-cta:hover{color:#fff}
+
+/* ── HERO ── */
+.hero{background:var(--sage-dark);padding:90px 40px 80px;position:relative;overflow:hidden}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.03) 59px,rgba(255,255,255,0.03) 60px),
+    repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,0.03) 59px,rgba(255,255,255,0.03) 60px);
+}
+.hero-inner{max-width:860px;margin:0 auto;position:relative}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
+  border-radius:20px;padding:6px 16px;
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--sage-light);margin-bottom:28px
+}
+.hero h1{
+  font-family:'Lora',serif;
+  font-size:clamp(32px,5.5vw,56px);
+  font-weight:700;line-height:1.1;
+  color:#fff;margin-bottom:24px;
+  max-width:700px
+}
+.hero h1 em{font-style:italic;color:var(--sage-light)}
+.hero-sub{
+  font-size:clamp(15px,2vw,18px);
+  color:rgba(255,255,255,0.72);
+  max-width:560px;line-height:1.7;
+  margin-bottom:36px;font-weight:300
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn-hero{
+  background:#fff;color:var(--sage-dark);
+  padding:14px 28px;border-radius:7px;
+  font-size:14px;font-weight:500;
+  text-decoration:none;font-family:'DM Sans',sans-serif;
+  transition:all 0.2s;display:inline-block
+}
+.btn-hero:hover{background:var(--sage-pale);transform:translateY(-1px)}
+.btn-ghost{
+  color:rgba(255,255,255,0.8);font-size:14px;
+  text-decoration:none;display:flex;align-items:center;gap:6px
+}
+.btn-ghost:hover{color:#fff}
+.hero-proof{
+  margin-top:52px;padding-top:32px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  display:flex;gap:40px;flex-wrap:wrap
+}
+.proof-stat{color:#fff}
+.proof-num{font-family:'Lora',serif;font-size:28px;font-weight:700;display:block;line-height:1}
+.proof-label{font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;display:block}
+
+/* ── SECTION SHELLS ── */
+.section{padding:80px 40px}
+.section-inner{max-width:960px;margin:0 auto}
+.section-kicker{
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--sage-mid);font-weight:500;margin-bottom:12px
+}
+.section-heading{
+  font-family:'Lora',serif;font-size:clamp(24px,3.5vw,36px);
+  font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:16px
+}
+.section-sub{
+  font-size:16px;color:var(--ink-mid);max-width:580px;
+  line-height:1.7;font-weight:300
+}
+
+/* ── PROBLEM SECTION ── */
+.problem{background:var(--white);border-top:3px solid var(--terra)}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:48px}
+.problem-stat-stack{display:flex;flex-direction:column;gap:20px}
+.pstat{
+  background:var(--cream);border-radius:10px;
+  padding:20px 22px;border-left:3px solid var(--terra);
+  border-radius:0 10px 10px 0
+}
+.pstat-num{font-family:'Lora',serif;font-size:32px;font-weight:700;color:var(--terra);display:block;line-height:1}
+.pstat-text{font-size:13px;color:var(--ink-mid);margin-top:6px;line-height:1.5}
+.problem-text p{font-size:15px;color:var(--ink-mid);line-height:1.8;margin-bottom:16px;font-weight:300}
+.problem-text p:last-child{margin-bottom:0}
+.problem-text strong{color:var(--ink);font-weight:500}
+
+/* ── HOW IT WORKS ── */
+.how{background:var(--cream)}
+.flow-strip{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;margin-top:52px;position:relative
+}
+.flow-strip::before{
+  content:'';position:absolute;
+  top:28px;left:calc(12.5% + 14px);right:calc(12.5% + 14px);
+  height:1px;background:var(--sage-light);z-index:0
+}
+.flow-step{text-align:center;padding:0 16px;position:relative;z-index:1}
+.flow-circle{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--sage-pale);border:2px solid var(--sage-light);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+  font-size:20px
+}
+.flow-step.active .flow-circle{background:var(--sage);border-color:var(--sage)}
+.flow-label{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.flow-desc{font-size:12px;color:var(--ink-light);line-height:1.5}
+
+/* ── TOOLS GRID ── */
+.tools{background:var(--white)}
+.tools-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;margin-top:48px
+}
+.tool-card{
+  background:var(--cream);border-radius:12px;
+  padding:22px 20px;border:1px solid var(--border);
+  transition:all 0.2s;position:relative;overflow:hidden
+}
+.tool-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:3px;background:var(--sage-light);
+  transition:background 0.2s
+}
+.tool-card:hover{border-color:var(--sage-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,94,74,0.1)}
+.tool-card:hover::before{background:var(--sage)}
+.tool-card.featured-tool{background:var(--sage-pale);border-color:var(--sage-light)}
+.tool-card.featured-tool::before{background:var(--sage)}
+.tool-num{
+  font-size:11px;font-weight:500;letter-spacing:1px;
+  text-transform:uppercase;color:var(--sage-mid);margin-bottom:8px
+}
+.tool-name{
+  font-family:'Lora',serif;font-size:16px;font-weight:600;
+  color:var(--ink);margin-bottom:8px;line-height:1.3
+}
+.tool-desc{font-size:13px;color:var(--ink-mid);line-height:1.6;margin-bottom:12px}
+.tool-cta-hint{
+  font-size:11px;color:var(--sage);font-weight:500;
+  display:flex;align-items:center;gap:4px
+}
+.star-flag{
+  display:inline-block;background:var(--gold-light);
+  color:var(--gold);font-size:10px;font-weight:500;
+  padding:2px 8px;border-radius:4px;margin-bottom:8px;
+  border:1px solid rgba(196,145,58,0.25)
+}
+
+/* ── LOOP DIAGRAM ── */
+.loop{background:var(--sage-dark);padding:80px 40px}
+.loop .section-heading{color:#fff}
+.loop .section-sub{color:rgba(255,255,255,0.65)}
+.loop .section-kicker{color:var(--sage-light)}
+.loop-visual{
+  display:flex;align-items:center;gap:0;
+  margin-top:52px;flex-wrap:nowrap;overflow-x:auto
+}
+.loop-item{
+  flex:1;min-width:140px;text-align:center;padding:0 12px;
+  position:relative
+}
+.loop-dot{
+  width:64px;height:64px;border-radius:50%;
+  border:2px solid rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.07);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 14px;font-size:24px
+}
+.loop-item.highlight .loop-dot{
+  background:var(--sage);border-color:var(--sage-light)
+}
+.loop-arrow{
+  font-size:20px;color:rgba(255,255,255,0.25);
+  flex-shrink:0;margin-bottom:28px
+}
+.loop-title{font-size:13px;font-weight:500;color:#fff;margin-bottom:4px}
+.loop-sub{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5}
+.loop-note{
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;padding:16px 22px;
+  font-size:14px;color:rgba(255,255,255,0.7);
+  text-align:center;margin-top:36px;line-height:1.7;font-weight:300
+}
+.loop-note strong{color:#fff;font-weight:500}
+
+/* ── PRICING ── */
+.pricing{background:var(--cream)}
+.pricing-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:20px;margin-top:48px
+}
+.price-card{
+  background:var(--white);border-radius:14px;
+  padding:28px 24px;border:1px solid var(--border)
+}
+.price-card.recommended{
+  border:2px solid var(--sage);
+  position:relative
+}
+.rec-flag{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--sage);color:#fff;
+  font-size:11px;font-weight:500;letter-spacing:0.5px;
+  padding:4px 14px;border-radius:20px;white-space:nowrap
+}
+.price-tier{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage-mid);margin-bottom:10px}
+.price-amount{font-family:'Lora',serif;font-size:38px;font-weight:700;color:var(--ink);line-height:1}
+.price-period{font-size:13px;color:var(--ink-light);margin-top:4px}
+.price-setup{
+  font-size:12px;color:var(--ink-light);
+  padding:10px 0 14px;border-bottom:1px solid var(--border);
+  margin-bottom:16px
+}
+.price-setup strong{color:var(--ink-mid)}
+.price-feature{
+  font-size:13px;color:var(--ink-mid);padding:6px 0;
+  display:flex;gap:10px;align-items:flex-start;line-height:1.45
+}
+.price-feature::before{content:'✓';color:var(--sage);font-weight:600;flex-shrink:0;margin-top:0px}
+.price-math{
+  background:var(--sage-pale);border-radius:7px;
+  padding:8px 12px;margin-top:18px;
+  font-size:12px;color:var(--sage-dark)
+}
+
+/* ── SOCIAL PROOF / ORIGIN ── */
+.origin{background:var(--white)}
+.origin-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:48px}
+.origin-quote{
+  border-left:3px solid var(--terra);
+  padding:24px 28px;background:var(--terra-light);
+  border-radius:0 12px 12px 0
+}
+.origin-quote p{
+  font-family:'Lora',serif;font-size:18px;font-weight:400;
+  font-style:italic;color:var(--ink);line-height:1.7;margin-bottom:16px
+}
+.origin-attr{font-size:13px;color:var(--ink-mid);font-weight:400}
+.origin-attr strong{color:var(--ink);font-weight:500}
+.origin-body p{font-size:15px;color:var(--ink-mid);line-height:1.8;margin-bottom:14px;font-weight:300}
+.origin-body p strong{color:var(--ink);font-weight:500}
+
+/* ── CTA SECTION ── */
+.cta-section{
+  background:var(--sage);padding:80px 40px;
+  text-align:center
+}
+.cta-section h2{
+  font-family:'Lora',serif;font-size:clamp(26px,4vw,42px);
+  font-weight:700;color:#fff;margin-bottom:16px;line-height:1.2
+}
+.cta-section p{
+  font-size:16px;color:rgba(255,255,255,0.75);
+  max-width:500px;margin:0 auto 36px;line-height:1.7;font-weight:300
+}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-white{
+  background:#fff;color:var(--sage-dark);
+  padding:15px 32px;border-radius:7px;
+  font-size:15px;font-weight:500;
+  text-decoration:none;font-family:'DM Sans',sans-serif;
+  transition:all 0.2s;display:inline-block
+}
+.btn-white:hover{background:var(--sage-pale);transform:translateY(-1px)}
+.btn-outline-white{
+  background:transparent;color:#fff;
+  border:1.5px solid rgba(255,255,255,0.5);
+  padding:15px 28px;border-radius:7px;
+  font-size:15px;font-weight:400;
+  text-decoration:none;font-family:'DM Sans',sans-serif;
+  transition:all 0.2s;display:inline-block
+}
+.btn-outline-white:hover{border-color:#fff;background:rgba(255,255,255,0.08)}
+.cta-contact{margin-top:24px;font-size:13px;color:rgba(255,255,255,0.55)}
+.cta-contact a{color:rgba(255,255,255,0.8);text-decoration:none}
+.cta-contact a:hover{color:#fff}
+
+/* ── FOOTER ── */
+.site-footer{
+  background:var(--sage-dark);padding:32px 40px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px
+}
+.footer-brand{font-family:'Lora',serif;font-size:14px;color:rgba(255,255,255,0.7);font-weight:600}
+.footer-brand span{font-style:italic;font-weight:400}
+.footer-tagline{font-size:12px;color:rgba(255,255,255,0.4);margin-top:2px}
+.footer-contact{font-size:12px;color:rgba(255,255,255,0.5);text-align:right}
+.footer-contact a{color:rgba(255,255,255,0.7);text-decoration:none}
+.footer-contact a:hover{color:#fff}
+
+/* ── FADE IN ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{opacity:0;animation:fadeUp 0.6s ease forwards}
+.fade-in:nth-child(1){animation-delay:0.1s}
+.fade-in:nth-child(2){animation-delay:0.2s}
+.fade-in:nth-child(3){animation-delay:0.3s}
+.fade-in:nth-child(4){animation-delay:0.4s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .topbar,.hero,.section,.loop,.pricing,.cta-section,.site-footer{padding-left:20px;padding-right:20px}
+  .hero{padding-top:60px;padding-bottom:60px}
+  .problem-grid,.origin-grid{grid-template-columns:1fr;gap:32px}
+  .flow-strip{grid-template-columns:1fr 1fr;gap:24px}
+  .flow-strip::before{display:none}
+  .tools-grid{grid-template-columns:1fr 1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .loop-visual{flex-wrap:wrap;justify-content:center}
+  .loop-arrow{display:none}
+  .hero-proof{gap:24px}
+}
+@media(max-width:480px){
+  .tools-grid{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="topbar-logo">The Prepared Life <span>Store</span></div>
+  <a href="#contact" class="topbar-cta">preparedlife@yahoo.com</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">✦ For senior care facilities &amp; health systems</div>
+    <h1>Your families are searching<br>for answers at <em>3am.</em><br>Be the one who's there.</h1>
+    <p class="hero-sub">A suite of six white-labeled family engagement tools — built to keep prospective residents inside your brand from first search to signed agreement.</p>
+    <div class="hero-actions">
+      <a href="#pricing" class="btn-hero">See packages &amp; pricing →</a>
+      <a href="#tools" class="btn-ghost">See the 6 tools ↓</a>
+    </div>
+    <div class="hero-proof">
+      <div class="proof-stat fade-in">
+        <span class="proof-num">6</span>
+        <span class="proof-label">Interactive tools, fully white-labeled</span>
+      </div>
+      <div class="proof-stat fade-in">
+        <span class="proof-num">6–18</span>
+        <span class="proof-label">Months families research before deciding</span>
+      </div>
+      <div class="proof-stat fade-in">
+        <span class="proof-num">100%</span>
+        <span class="proof-label">Your brand. Your CTA. Your leads.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section class="section problem">
+  <div class="section-inner">
+    <p class="section-kicker">The problem you already know</p>
+    <h2 class="section-heading">Families are making decisions about your facility<br>on someone else's website.</h2>
+    <div class="problem-grid">
+      <div class="problem-stat-stack">
+        <div class="pstat">
+          <span class="pstat-num">70%</span>
+          <div class="pstat-text">of families begin researching senior care online — long before they contact a single facility.</div>
+        </div>
+        <div class="pstat">
+          <span class="pstat-num">6–18 mo</span>
+          <div class="pstat-text">average time between first search and a placement decision. That's 6–18 months your competitors have to build the relationship.</div>
+        </div>
+        <div class="pstat">
+          <span class="pstat-num">1 in 3</span>
+          <div class="pstat-text">families say they chose a facility because of how supported they felt during the research phase — before they ever visited.</div>
+        </div>
+      </div>
+      <div class="problem-text">
+        <p>When a daughter is up at midnight searching "what do I do with my aging mom," she finds generic information on sites that have nothing to do with your facility. She uses their tools. She trusts their content. And when she's finally ready to make a call — she may not think of you first.</p>
+        <p><strong>The Prepared Life tool suite changes that equation.</strong> Each tool lives on your website, carries your branding, and ends every interaction with a single call-to-action: your phone number, your scheduling link, your admissions team.</p>
+        <p>You built the facility. We built the tools that bring families to your door — and keep them there while they decide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="section how">
+  <div class="section-inner">
+    <p class="section-kicker">How it works</p>
+    <h2 class="section-heading">From overwhelmed family to warm lead — inside your brand the entire time.</h2>
+    <div class="flow-strip">
+      <div class="flow-step">
+        <div class="flow-circle">🔍</div>
+        <div class="flow-label">Family searches</div>
+        <div class="flow-desc">Overwhelmed adult child finds your site searching for care options, costs, or safety help</div>
+      </div>
+      <div class="flow-step active">
+        <div class="flow-circle" style="background:var(--sage);border-color:var(--sage);">🛠</div>
+        <div class="flow-label">Uses your tool</div>
+        <div class="flow-desc">They complete a tool — branded with your name, your colors, your contact information</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-circle">🔗</div>
+        <div class="flow-label">Loops to next tool</div>
+        <div class="flow-desc">Results page offers the next relevant tool — keeping them engaged and inside your ecosystem</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-circle">📞</div>
+        <div class="flow-label">CTA fires</div>
+        <div class="flow-desc">Every tool ends with your CTA — schedule a visit, call your team, request a guide</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tools -->
+<section class="section tools" id="tools">
+  <div class="section-inner">
+    <p class="section-kicker">The 6-tool suite</p>
+    <h2 class="section-heading">Every tool addresses a real moment in the family's journey.</h2>
+    <p class="section-sub">Each one is fully interactive, mobile-optimized, and white-labeled with your facility name, logo, brand color, and a custom call-to-action.</p>
+
+    <div class="tools-grid">
+      <div class="tool-card featured-tool">
+        <div class="star-flag">⭐ Highest engagement</div>
+        <div class="tool-num">Tool 01</div>
+        <div class="tool-name">Home Safety Walkthrough</div>
+        <div class="tool-desc">Room-by-room guided assessment that identifies fall risks, safety gaps, and recommended modifications. Families use this before they're ready for anything else — it meets them exactly where they are.</div>
+        <div class="tool-cta-hint">→ CTA: "Talk to our care team about next steps"</div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-num">Tool 02</div>
+        <div class="tool-name">Care Options Navigator</div>
+        <div class="tool-desc">Interactive assessment that walks a family through their loved one's current health, safety, and independence — and surfaces the care levels most appropriate for their situation, with plain-language explanations of each option.</div>
+        <div class="tool-cta-hint">→ CTA: "Schedule a tour of our community"</div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-num">Tool 03</div>
+        <div class="tool-name">Elder Care Cost Estimator</div>
+        <div class="tool-desc">Personalized monthly cost estimate with a 3-year projection, coverage gap analysis, and regional cost data. Answers the question every family is afraid to ask — and positions your facility as the honest resource they can trust.</div>
+        <div class="tool-cta-hint">→ CTA: "Request a personalized cost conversation"</div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-num">Tool 04</div>
+        <div class="tool-name">Family Meeting Facilitator</div>
+        <div class="tool-desc">Structured guide for the hardest conversation most families will ever have. Includes pre-written discussion starters, a commitment record, and a printable summary — so everyone leaves on the same page.</div>
+        <div class="tool-cta-hint">→ CTA: "Our counselors can help guide your family"</div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-num">Tool 05</div>
+        <div class="tool-name">Caregiver Burnout Check-In</div>
+        <div class="tool-desc">Scored 8-question burnout assessment with wellbeing insights and resources. Reaches the exhausted caregiver — the person most likely to make a placement decision — at exactly the moment they need to feel seen.</div>
+        <div class="tool-cta-hint">→ CTA: "Let us help carry some of this with you"</div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-num">Tool 06</div>
+        <div class="tool-name">Care Options Comparison Workbook</div>
+        <div class="tool-desc">Side-by-side comparison of care settings — costs, services, what to look for, and questions to ask. Helps families evaluate options clearly and objectively, with your community positioned as the natural next step.</div>
+        <div class="tool-cta-hint">→ CTA: "Compare us — we welcome the conversation"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The Loop -->
+<section class="loop">
+  <div class="section-inner">
+    <p class="section-kicker">The engagement loop</p>
+    <h2 class="section-heading">A family that uses three tools is a family that trusts you.</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.65)">Each tool links naturally to the next. A family doesn't just visit once — they come back over weeks and months, building a relationship with your brand long before they're ready to decide.</p>
+
+    <div class="loop-visual">
+      <div class="loop-item">
+        <div class="loop-dot">🏠</div>
+        <div class="loop-title">Home Safety</div>
+        <div class="loop-sub">Month 1–2<br>"Is it still safe?"</div>
+      </div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-item highlight">
+        <div class="loop-dot">🗺</div>
+        <div class="loop-title">Care Navigator</div>
+        <div class="loop-sub">Month 2–4<br>"What do we need?"</div>
+      </div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-item">
+        <div class="loop-dot">💰</div>
+        <div class="loop-title">Cost Estimator</div>
+        <div class="loop-sub">Month 3–6<br>"Can we afford it?"</div>
+      </div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-item">
+        <div class="loop-dot">👨‍👩‍👧</div>
+        <div class="loop-title">Family Meeting</div>
+        <div class="loop-sub">Month 5–9<br>"Are we aligned?"</div>
+      </div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-item highlight">
+        <div class="loop-dot">📞</div>
+        <div class="loop-title">Your CTA</div>
+        <div class="loop-sub">When ready<br>"Call Maplewood"</div>
+      </div>
+    </div>
+
+    <div class="loop-note">
+      <strong>Every touchpoint stays inside your brand.</strong> There are no links to competitors, no third-party upsells, no data shared outside your site. Just a family building trust with your name — month after month — until they're ready to move forward.
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section pricing" id="pricing">
+  <div class="section-inner">
+    <p class="section-kicker">Transparent pricing</p>
+    <h2 class="section-heading">One contract. Every tool built. No ongoing work on your end.</h2>
+    <p class="section-sub">Annual licensing. You embed the tools on your site — or we host them on a branded link. Setup handled entirely by us.</p>
+
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <div class="price-tier">Starter</div>
+        <div class="price-amount">$3,400</div>
+        <div class="price-period">per year · setup included</div>
+        <div class="price-setup">3 core tools · no setup fee</div>
+        <div class="price-feature">Home Safety Walkthrough</div>
+        <div class="price-feature">Care Options Navigator</div>
+        <div class="price-feature">Elder Care Cost Estimator</div>
+        <div class="price-feature">Full white-label branding</div>
+        <div class="price-feature">1 custom CTA per tool</div>
+        <div class="price-feature">Annual renewal</div>
+        <div class="price-math">≈ $1,133 per tool per year</div>
+      </div>
+
+      <div class="price-card recommended">
+        <div class="rec-flag">Best value</div>
+        <div class="price-tier">Growth</div>
+        <div class="price-amount">$6,400</div>
+        <div class="price-period">per year</div>
+        <div class="price-setup">One-time setup: <strong>$500</strong></div>
+        <div class="price-feature">All 6 tools — complete suite</div>
+        <div class="price-feature">Full white-label branding</div>
+        <div class="price-feature">Custom CTA per tool</div>
+        <div class="price-feature">QR codes for print &amp; discharge materials</div>
+        <div class="price-feature">Priority support</div>
+        <div class="price-feature">Annual renewal</div>
+        <div class="price-math">≈ $1,067 per tool per year</div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-tier">Per Tool</div>
+        <div class="price-amount">$1,200</div>
+        <div class="price-period">per tool · per year</div>
+        <div class="price-setup">One-time setup: <strong>$150 per tool</strong></div>
+        <div class="price-feature">Any single tool from the suite</div>
+        <div class="price-feature">Full white-label branding</div>
+        <div class="price-feature">1 custom CTA</div>
+        <div class="price-feature">Add tools at any time</div>
+        <div class="price-feature">Annual renewal per tool</div>
+        <div class="price-math">3 tools = $3,600/yr + $450 setup<br><span style="font-size:11px;opacity:0.7">Starter saves you $650/yr at 3 tools</span></div>
+      </div>
+
+    </div>
+
+    <div style="background:var(--white);border-radius:12px;padding:22px 26px;margin-top:24px;border:1px solid var(--border);display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap">
+      <div style="font-size:22px;flex-shrink:0">💡</div>
+      <div>
+        <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px">Multi-location pricing available</div>
+        <div style="font-size:13px;color:var(--ink-mid);line-height:1.6">Operating more than one community? We offer volume pricing for groups of 3 or more locations. Each location gets its own full white-label setup — same tools, separate branding per site. Contact us for a custom quote.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Origin / Trust -->
+<section class="section origin">
+  <div class="section-inner">
+    <p class="section-kicker">Why this exists</p>
+    <h2 class="section-heading">Built from the inside of caregiving. Not the outside.</h2>
+    <div class="origin-grid">
+      <div class="origin-quote">
+        <p>"These tools weren't designed in a boardroom. They were built by someone who lived through the overwhelm of caring for an aging parent — and couldn't find anything that actually helped her family think clearly."</p>
+        <div class="origin-attr"><strong>Stacy Burke</strong> · Founder, The Prepared Life Store · Yale, Michigan</div>
+      </div>
+      <div class="origin-body">
+        <p>Every question in every tool came from a real moment — a real conversation, a real 2am search, a real family trying to figure out what to do next without anyone to guide them.</p>
+        <p>That's what makes these tools resonate with families in a way that generic content never does. <strong>They feel like they were made for exactly this moment.</strong> Because they were.</p>
+        <p>When your facility offers these tools, you're not just providing information. You're saying: <em>"We understand what your family is going through. We've been thinking about it too."</em> That's the beginning of trust. And trust is what moves families from searching to scheduling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2>Ready to see it in action?</h2>
+  <p>Request the live demo — a fully branded version of the Care Options Navigator, built for a sample facility. Spend five minutes with it and you'll understand exactly what your families would experience.</p>
+  <div class="cta-buttons">
+    <a href="mailto:preparedlife@yahoo.com?subject=Demo Request — Prepared Life Tool Suite" class="btn-white">Request the live demo →</a>
+    <a href="mailto:preparedlife@yahoo.com?subject=Pricing Question — Prepared Life Tool Suite" class="btn-outline-white">Ask a pricing question</a>
+  </div>
+  <div class="cta-contact">
+    Or reach us directly: <a href="mailto:preparedlife@yahoo.com">preparedlife@yahoo.com</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div>
+    <div class="footer-brand">The Prepared Life <span>Store</span></div>
+    <div class="footer-tagline">Life happens. Best have a plan. · Yale, Michigan</div>
+  </div>
+  <div class="footer-contact">
+    <div><a href="mailto:preparedlife@yahoo.com">preparedlife@yahoo.com</a></div>
+    <div style="margin-top:4px">Family tools · <a href="https://www.etsy.com/shop/ThePreparedLifeShop" target="_blank">ThePreparedLifeShop on Etsy</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
